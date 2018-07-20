@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/* 탭 메뉴 */
+.tab_menu{
+  width:130px;
+  height:800px;
+  float: left;
+  padding: 20px 38px 0 0;
+
+  border-right: 2px solid #a70101;
+}
+
+
+
+/* 탭메뉴 디자인  */
+.tab_menu ul li.res{
+  display: block;height: 40px;margin: 11px 0 21px 0;
+}
+
+.tab_menu ul li.res p{padding-top: 8px;}
+
+.tab_menu ul li.res p a{color : #a1a1a1;font-weight: bold;}
+
+.tab_menu ul li.icon_res{
+  padding-left: 53px;
+  opacity: 0.8;
+  cursor: pointer;
+  background: url(../../image_reservation/reserv.png) no-repeat 0 center;
+}
+.tab_menu ul li.icon_res:hover,
+.tab_menu ul span.active_tab li.icon_res{
+  background: url(../../image_reservation/reserv_on.png) no-repeat 0 center;
+}
+.tab_menu ul li.icon_my{
+  padding-left: 53px;
+  opacity: 0.8;
+  cursor: pointer;
+  background: url(../../image_reservation/my.png) no-repeat 0 center;
+}
+.tab_menu ul li.icon_my:hover,
+.tab_menu ul span.active_tab li.icon_my{
+  background: url(../../image_reservation/my_on.png) no-repeat 0 center;
+}
+
+.tab_menu ul li.icon_res:hover a,
+.tab_menu ul li.icon_my:hover a,
+.tab_menu ul span.active_tab li p a{color: #000000;}
+
+/* 탭했을 경우 나오는 컨텐츠 */
+.tab_content{
+  display: inline-block;
+  padding : 8px 0 8px 10px;
+  margin: 40px 0 0 65px;
+  height: 700px; width:645px;
+  position: relative;
+  top:20px;
+  /* border: 1px solid #969696; */
+}
+
+/* 탭컨텐츠 제목 */
+.tab_content p.first{
+  display: inline-block;
+  font-size: 20px;
+  color: #585858;
+  font-weight: bold;
+  padding: 0 0 7px 0px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #a70101;
+}
+
+/* 검색 결과 목록 */
+
+.searchlist table{
+  border-collapse: collapse;
+	width: 648px;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 20px;
+}
+.searchlist table th{
+  padding: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #a70101;
+  height: 40px;
+
+}
+.searchlist table tr,.tab_content table td{
+  height: 40px;
+	padding: 15px 10px 8px 10px;
+
+}
+.reserv_list a{color: #292828;}
+.reserv_list a:hover{
+  font-weight: bold;
+  color : #000000
+
+}
+
+/* paging */
+
+.pagination{
+ 	list-style:none;  
+    float:left;  
+    display:inline;
+    margin-left:250px;
+    margin-top:80px;
+}
+
+.pagination li a{
+	 color:#585858;
+	 font:bold 12px tahoma;
+	 border:1px solid #eee; 
+	 text-align:center;
+	 font-size: 15px;
+	 text-decoration:none;
+	 padding:8px;
+	 width:15px;          
+}
+
+
+.pagination li a:hover, .pagination ul li a:focus {  
+    color:#dedede;  
+    border:1px solid #f40;  
+    background-color:#a70101;  
+}  

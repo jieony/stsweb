@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+
+/* 탭 메뉴 */
+.tab_menu{
+  width:168px;
+  height: 979px;
+  float: left;
+  padding: 20px 0 0 0;
+
+  border-right: 2px solid #a70101;
+}
+
+/* 탭메뉴 디자인  */
+.tab_menu ul li.res{
+  display: block;
+  height: 40px;
+  margin:20px 50px 30px 0;
+}
+
+.tab_menu ul li.res p{
+  padding-top: 8px;
+  text-align: center;
+
+}
+
+.tab_menu ul li.res p a{color : #a1a1a1;font-weight: bold;}
+
+.tab_menu ul li.res:hover a,
+.tab_menu ul span.active_tab li p a{color: #000000;}
+
+
+/* 탭했을 경우 나오는 컨텐츠 */
+.tab_content{
+  display: inline-block;
+  padding : 8px 0 8px 10px;
+  margin: 40px 0 0 65px;
+  height: 500px; width:645px;
+  position: relative;
+  top:20px;
+  /* border: 1px solid #969696; */
+  /* background-color: #dddddd; */
+}
+
+/* 탭컨텐츠 제목 */
+.tab_content p.first{
+  display: block;
+  font-size: 20px;
+  color: #585858;
+  font-weight: bold;
+  padding: 0 0 7px 0px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #a70101;
+  /* background-color: #34c473; */
+
+}
+
+
+/* 등록 전체 */
+.info{
+  /* background-color: #ffc4bf; */
+  margin: 40px 0 0 20px;
+}
+
+/* 각 리스트 */
+ul.form li.li{
+  display: block;
+  margin-bottom: 30px;
+}
+
+/* 대표 라벨 */
+.li>label:first-of-type{
+  /* background-color: #b66ca2; */
+  width: 120px;
+  display: inline-block;
+  font-size: 14px;
+  color: #717171;
+  font-weight: bold;
+}
+
+
+/* 검색창 제외 모든 텍스트 input */
+input[type=text]:not(.searchtext){
+  height: 28px; width: 160px;
+  border-radius: 3px;
+  border-style: none;
+  border-bottom:  1px solid #d2d2d2;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+input[type=radio]+span,input[type=checkbox]+span{
+  position: relative;
+  bottom: 2px; left: 3px;
+  margin-right: 10px;
+}
+
+.div_theme input[type=checkbox]+span{
+  font-size: 14px;
+  position: relative;
+  bottom: 2px; left: 2px;
+}
+
+select{
+  height: 32px; width: 130px;
+  border-radius: 3px;
+  border-style: none;
+  border-bottom:  1px solid #d2d2d2;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+
+/* 테마 선택 */
+/* 테마 선택 전체 */
+.form .li div.div_theme{
+  margin:10px 0 0 12px;
+}
+
+/* 테마 첵박+라벨 */
+.div_theme>label{
+  margin-right: 10px;
+  display:inline-block;
+  margin-bottom: 10px;
+}
+
+/* 테마 첵박 라벨 */
+.li label.la_theme{
+  margin-bottom: 10px;
+}
+
+form button{
+  margin-top: 10px;
+  margin-right: 10px;
+  border-style: none;
+  border-radius: 3px;
+  background-color: #910404;
+  padding:6px 13px 8px 13px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+/* footer */
+footer{
+     border-top: 1px solid #e0e0e0;
+     min-width: 1000px;
+     line-height: 25px;
+     padding: 35px 0;
+     text-align: center;
+     position: relative;
+     bottom: 0;
+     font-size: 12px;
+     color: #808080;
+     margin: 63px auto 0px auto;
+   }
+

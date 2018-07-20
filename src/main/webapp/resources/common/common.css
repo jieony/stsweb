@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+
+*{margin: 0;padding:0;}
+
+header{
+  border-bottom: 2px solid #a70101;
+  margin-top: 30px;}
+
+li{
+  list-style: none;
+  display: inline-block;}
+
+a{text-decoration: none;}
+
+section{
+  width: 1110px;
+  margin: 0 auto;
+
+}
+
+.center{
+  width: 100%;
+  margin: 0 auto;
+}
+
+textarea {
+  resize: none;
+}
+
+/* 공통 */
+.top{
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+.title{
+  margin : 0 0 15px 100px;
+}
+.logo{
+
+  position: relative;
+  left:60px;
+}
+
+
+/* 검색창 */
+.search{
+  display: inline-block;
+  width: 400px;
+
+}
+
+/* 검색 입력란 */
+.searchtext{
+  border: 4px solid #a70101;
+  width: 300px; height: 25px;
+  padding :0 10px;
+ }
+
+ /* 검색버튼 */
+ .search button{
+
+  background-color: #a70101;
+  border: none;
+  color: white;
+  padding: 7px 11px 9px 11px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+ }
+
+/* 공통 네비 */
+.nav{
+  width: 920px;
+  display: block;
+  clear: both;
+  padding-top: 30px;
+
+  margin: 0 auto;
+}
+.nav ul{
+  /* width:  */
+}
+.nav li{
+  margin-right: 20px;
+  width:149px;
+  text-align: center;
+}
+
+.nav li a{
+  position: relative;
+  display: block;
+  padding: 10px;
+  width:120px;
+  font-size: 17px;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+.nav li a.active{
+  background-color: #a70101;
+  color:#fff;
+}
+.nav ul li a:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+
+.nav ul li a:hover{
+  transition: all 1.5s;
+  color: #fff;
+  z-index: 1;
+}
+
+.nav ul li a:hover:after{
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
+
+/* Keyframes */
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #a70101;
+  }
+}
+
+.login{
+  position: relative;
+  left: 27px;
+  padding: 0px 20px 3px 20px;
+  border-style: none;
+  background-color: #fff;
+  color:#bbbbbb;
+
+  border-right: 1px solid #e7e7e7;
+}
+.login:hover{
+  color:#a70101;
+}
+
+
+
+/* end 공통 */

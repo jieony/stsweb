@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lD">
+	
+<select id="LoginCheck" parameterType="com.hk.th.vo.MembersVo" resultType="Integer">
+	select count(*) from members where uid = #{uid} and pw = #{pw}
+</select>
+
+<select id="Checkid" parameterType="String" resultType="Integer">
+	select count(*) from members where uid = #{uid}
+</select>
+
+<select id="SelectMemberlist" resultType="com.hk.th.vo.MembersVo">
+	select * from members
+</select>
+
+<insert id="InsertMember" parameterType="com.hk.th.vo.MembersVo">
+	insert into members (uid,name,pw,tel,email,gender,birthday,address,enroll,penalty) 
+	values (#{uid},#{name},#{pw},#{tel},#{email},#{gender},#{birthday},#{address},0,0)
+</insert>
+
+<select id="selectId" parameterType="com.hk.th.vo.MembersVo" resultType="String">
+	select uid from members where name = #{name} and email = #{email}
+</select>
+<select id="selectPw" parameterType="com.hk.th.vo.MembersVo" resultType="String">
+	select pw from members where name = #{name} and uid = #{uid} and email = #{email}
+</select>
+
+</mapper>

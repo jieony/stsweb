@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>예약맛집</title>
+  <link rel="stylesheet" href="common/common.css">
+  <link rel="stylesheet" href="css/css_reservation/reservation.css">
+
+</head>
+
+
+<body>
+  <div class="center">
+    <header class="header ">
+      <div class="top">
+        <!-- 로고와 제목 -->
+        <div class="title">
+          <img class="logo" src="common/image/logo.gif" alt="logo">
+          <h2>서울맛집찾기</h2>
+        </div>
+
+        <!-- 검색창 -->
+        <div class="search">
+            <input class="searchtext" type="text"/>
+            <button type="button">검색</button>
+        </div>
+      </div>
+      <!-- 공통 네비게이션 -->
+      <nav>
+        <div class="nav">
+          <ul class="">
+            <li><a href="#">지역별맛집</a></li>
+            <li><a href="#">테마별맛집</a></li>
+            <li><a class="active" href="#">예약맛집</a></li>
+            <li><a href="#">Q & A</a></li>
+            <button type="button" class="login">로그인</button>
+            <button type="button" class="login">회원가입</button>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+
+    <section>
+      <!-- 탭메뉴 -->
+      <div class="tab_menu">
+        <ul>
+          <span class="active_tab">
+            <li class="res icon_res" >
+              <p><a href="">예약하기</a></p>
+            </li>
+          </span>
+          <span class="">
+            <li class="res icon_my" >
+              <p><a href="">나의예약</a></p>
+            </li>
+          </span>
+        </ul>
+      </div>
+
+      <div class="tab_content">
+        <p class="first">예약 맛집 찾기</p>
+        <div class="search_res">
+          <form action="" method="">
+            <div class="select">
+              <label for="" class="ml">업종</label>
+              <select id="" name="" class="sd">
+                <option value="" selected> 업종선택</option>
+                <option value="au">한식</option>
+                <option value="au">양식</option>
+                <option value="ca">일식</option>
+                <option value="usa">중식</option>
+              </select>
+            </div>
+            <div class="select">
+              <label for="">테마</label>
+              <select id="" name=""  class="sd">
+                <option value="" selected> 테마선택</option>
+                <option value="">창희야 테마리스트 배열로해서 js에서 option에 뿌려라</option>
+              </select>
+            </div>
+            <div class="select">
+              <label for="">지역</label>
+              <select id="" name="" class="sd">
+                <option value="" selected> 지역선택</option>
+                <option value="" >창희야 지리스트 배열로해서 js에서 option에 뿌려라</option>
+              </select>
+
+            </div>
+            <div class="select">
+              <label for="">맛집이름</label>
+              <input class="res_name" type="text">
+            </div>
+            <div class="select">
+              <label for="">하위주소</label>
+              <input class="addr" type="text">
+            </div>
+            <button class="sbutton" type="submit" name="">검색</button>
+          </form>
+        </div>
+        <div class="searchlist">
+
+          <h5>예약가능 맛집 리스트</h5>
+          <table >
+            <colgroup>
+              <col style="width:50%;">
+              <col style="width:30%;">
+              <col style="width:10%;">
+              <col style="width:10%;">
+            </colgroup>
+        		<tr>
+        			<th>상호/주소</th>
+        			<th>영업시간/휴일</th>
+              <th>후기</th>
+        			<th>선택</th>
+        		</tr>
+            <tr>
+              <td>
+                  <a href=""><img class="food_img" src="image_reservation/food/food.jpg" alt="음식점사진"></a>
+                  <a class="food_a" href="">파트타짱</a>
+                  <p class="food_p">서대문구 창천동</p>
+              </td>
+              <td>
+                <p>10:00 ~ 21:00</p>
+                <p>연중무휴</p>
+              </td>
+              <td>20개</td>
+              <td><a class="food_a_re" href="reservation_info.html">예약</a></td>
+            </tr>
+            <tr>
+              <td>
+                  <a href=""><img class="food_img" src="image_reservation/food/food.jpg" alt="음식점사진"></a>
+                  <a class="food_a" href="">파트타짱</a>
+                  <p class="food_p">서대문구 창천동</p>
+              </td>
+              <td>
+                <p>10:00 ~ 21:00</p>
+                <p>연중무휴</p>
+              </td>
+              <td>20개</td>
+              <td><a class="food_a_re" href="">예약</a></td>
+            </tr>
+            <tr>
+              <td>
+                  <a href=""><img class="food_img" src="image_reservation/food/food.jpg" alt="음식점사진"></a>
+                  <a class="food_a" href="">파트타짱</a>
+                  <p class="food_p">서대문구 창천동</p>
+              </td>
+              <td>
+                <p>10:00 ~ 21:00</p>
+                <p>연중무휴</p>
+              </td>
+              <td>20개</td>
+              <td><a class="food_a_re" href="">예약</a></td>
+            </tr>
+          </table>
+        </div>
+
+      </div><!-- //탭 컨탠츠 1-->
+
+
+
+    </section>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Mana">
+	<select id="selectNoShowList" resultType="com.hk.th.vo.bookVo">
+		select bo_code,res_code,bo_uid,bo_conf from book where bo_conf='미방문';
+	</select>
+	
+	<update id="updatePenalty" parameterType="String">
+		update members set penalty=(select ifnull(max(penalty)+1,1) from book) where uid=#{id};
+	</update>
+
+	<update id="updateConf" parameterType="String">
+		update book set bo_conf='처리완료' where bo_code=#{code};
+	</update>
+	
+	<select id="selectResList" resultType="com.hk.th.vo.resVo">
+		select * from res where permission='승인'
+	</select>
+	
+	<select id="selectResDetail" resultType="com.hk.th.vo.resVo" parameterType="Integer">
+		select * from res where res_code=#{code}
+	</select>
+	
+	<select id="selectUnList" resultType="com.hk.th.vo.resVo">
+		select * from res where permission='미승인'
+	</select>
+	
+	<update id="updateRes" parameterType="com.hk.th.vo.resVo">
+		update res 
+		set res_name=#{res_name},line=#{line},res_tel=#{res_tel},res_addr=#{res_addr},
+		theme=#{theme},res_hourS=#{res_hourS},res_hourE=#{res_hourE},holiday=#{holiday},
+		seats=#{seats},contents=#{contents},information_bo=#{information_bo},lng=#{lng},lat=#{lat},
+		permission=#{permission},map_num=#{map_num},res_uid=#{res_uid}
+		where res_code=#{res_code}
+	</update>
+	
+	<delete id="deleteMem" parameterType="String">
+		delete from members where uid=#{uid}
+	</delete>
+	
+	<delete id="deleteRes" parameterType="Integer">
+		delete from res where res_code=#{res_code}
+	</delete>
+
+	<update id="updateEnrollBack" parameterType="String">
+		update members set enroll='0' where uid=#{uid}
+	</update>
+	
+	<select id="selectMenu" resultType="com.hk.th.vo.menuVo" parameterType="Integer">
+		select * from menu where res_code=#{code}
+	</select>
+	
+	<update id="updateMenu" parameterType="com.hk.th.vo.menuVo">
+		update menu set menu_cate=#{menu_cate},menu_fname=#{menu_fname},price=#{price}
+		where menu_code=#{menu_code}
+	</update>
+	
+	<select id="countBook" resultType="Integer">
+		select count(*) as cnt from book where bo_conf='미방문'
+	</select>
+	
+	<select id="BookpageList" resultType="com.hk.th.vo.bookVo" parameterType="hashmap">
+		select * from book where bo_conf='미방문' order by bo_date asc LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<select id="countMember" resultType="Integer">
+		select count(*) as cnt from members
+	</select>
+	
+	<select id="MemberpageList" resultType="com.hk.th.vo.MembersVo" parameterType="hashmap">
+		select * from members order by uid asc LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<select id="countres" resultType="Integer">
+		select count(*) as cnt from res where permission='승인'
+	</select>
+	
+	<select id="RespageList" resultType="com.hk.th.vo.resVo" parameterType="hashmap">
+		select * from res where permission='승인' order by res_code asc LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<select id="countunres" resultType="Integer">
+		select count(*) as cnt from res where permission='미승인'
+	</select>
+	<select id="UnrespageList" resultType="com.hk.th.vo.resVo" parameterType="hashmap">
+		select * from res where permission='미승인' order by res_code asc LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+</mapper>
+

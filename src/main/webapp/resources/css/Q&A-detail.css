@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/*질문게시판 */
+.p h3, .p p{
+  margin-top: 20px;
+  margin-left: 30px;
+}
+/* 탭했을 경우 나오는 컨텐츠 */
+.tab_content{
+  display:inline-block;
+  position: relative;
+  top:20px;
+  margin-left: 30px;
+  font-size: 15px;
+  /* width:600px; */
+  /* border: 1px solid #969696; */
+  /* background-color: #dddddd; */
+}
+/*테이블 */
+.Q_table{
+  margin-top: 20px;
+  font-size: 12px;
+  width:900px;
+  text-align:left;
+}
+.Q_table th{
+  border-bottom:1px solid#e7e7e7;
+  padding: 5px;
+
+}
+.Q_table:first-child{
+  border-top: 1px solid#e7e7e7;
+
+}
+.Q_table .Q_first{
+  border-top: 1px solid#e7e7e7;
+}
+.Q_table td{
+  border-bottom: 1px solid#e7e7e7;
+  height: 50px;
+  padding-left: 20px;
+}
+.Q_table td p{
+  font-size: 14px;
+  line-height: 200%;
+  padding: 10px 40px 30px 0;
+}
+/* 목록 수정 삭제 버튼 공통 */
+.Q_button{
+  margin-top: 20px;
+  width:80px;
+  height:30px;
+  border-radius: 10px;
+  background-color: #a3a3a3;
+  color: white;
+  border: 1px solid #a3a3a3;
+  margin-right: 5px;
+}
+.Q_button:hover{
+  background-color: #ffffff;
+  color:black;
+}
+#btn_master{
+  float:right;
+  background-color: #a70101;
+}
+#btn_master:hover{
+  background-color: #ffffff;
+}

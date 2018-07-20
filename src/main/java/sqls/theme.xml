@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="theme">
+	<select id ="searchtheme" resultType="com.hk.th.vo.resVo" parameterType="map">
+		select * from res where theme like concat ('%',#{theme},'%');
+	</select>
+	
+	<select id="GetCount" resultType="Integer" parameterType="String">
+		select count(*) as cnt from res where theme like concat ('%',#{theme},'%')
+	</select>
+	
+	<select id ="themelist" resultType="com.hk.th.vo.resVo" parameterType="hashmap">
+		select * from res where theme like concat ('%',#{theme},'%') and permission='승인' order by res_name asc LIMIT #{offset}, #{noOfRecords}
+	</select>
+</mapper>

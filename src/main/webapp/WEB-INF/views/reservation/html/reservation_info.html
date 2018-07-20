@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="common/common.css">
+  <link rel="stylesheet" href="css/css_reservation/reservation_info.css">
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+  <script>
+
+
+    function render_mailchk() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("myselect").value = x;
+    }
+
+
+   $(function() {
+     $("#datepicker").datepicker({
+     dateFormat: 'yymmdd',
+     monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        dayNamesMin: ['일','월','화','수','목','금','토'],
+      changeMonth: true, //월변경가능
+        changeYear: true, //년변경가능
+      showMonthAfterYear: true, //년 뒤에 월 표시
+     });
+  });
+
+  $(function() {
+      var Html = [];
+      var values="";
+      for (var i = 10; i < 22; i++) {
+        for(var j = 0; j < 60; j=j+10){
+          if(j==0){
+            value=i+"시 0"+j+"분";
+          }else {
+            value=i+"시 "+j+"분";
+          }
+          Html[i]="<option value="+value+">"+value+"</option>";
+          $("#selectTimeS").append(Html.join(""));
+          Html = [];
+        }
+      }
+  });
+
+  $(function() {
+      var Html = [];
+      var values="";
+      for (var i = 1; i < 21; i++) {
+          value=i
+          Html[i]="<option value="+value+">"+value+"</option>";
+
+      }
+      $("#selectTimeC").append(Html.join(""));
+  });
+</script>
+  <title>예약정보</title>
+</head>
+<body>
+  <div class="center">
+    <header class="header ">
+      <div class="top">
+        <!-- 로고와 제목 -->
+        <div class="title">
+          <img class="logo" src="common/image/logo.gif" alt="logo">
+          <h2>서울맛집찾기</h2>
+        </div>
+
+        <!-- 검색창 -->
+        <div class="search">
+            <input class="searchtext" type="text"/>
+            <button type="button">검색</button>
+        </div>
+      </div>
+      <!-- 공통 네비게이션 -->
+      <nav>
+        <div class="nav">
+          <ul class="">
+            <li><a href="#">지역별맛집</a></li>
+            <li><a href="#">테마별맛집</a></li>
+            <li><a class="active" href="#">예약맛집</a></li>
+            <li><a href="#">Q & A</a></li>
+            <button type="button" class="login">로그인</button>
+            <button type="button" class="login">회원가입</button>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+      <!-- 탭메뉴 -->
+      <div class="tab_menu">
+        <ul>
+          <span class="active_tab">
+            <li class="res icon_res" >
+              <p><a href="">예약하기</a></p>
+            </li>
+          </span>
+          <span class="">
+            <li class="res icon_my" >
+              <p><a href="">나의예약</a></p>
+            </li>
+          </span>
+        </ul>
+      </div>
+
+      <!-- 탭컨텐츠 -->
+      <div class="tab_content">
+        <p class="first">예약정보작성</p>
+        <form action="" method="">
+          <div class="info">
+            <div class="info_div">
+              <label for="name_res">음식점</label>
+              <!-- 라벨 네글자로 바꿀거면 라벨 넓이 지정하고하셈ㅋ -->
+              <input class="info_input" type="text" id="name_res"  value="파스타짱" readonly>
+            </div>
+            <div class="info_div">
+              <label for="id">예약자</label>
+              <input class="info_input" type="text" id="id" value="eony1010"  readonly>
+            </div>
+            <div class="info_div">
+              <label for="datepicker">예약일</label>
+              <input class="info_input" type="text" id="datepicker" />
+            </div>
+            <div class="info_div">
+              <label for="selectTimeS">예약시간</label>
+              <select id="selectTimeS" class="info_select">
+              </select>
+            </div>
+            <div class="info_div">
+              <label for="selectTimeC">예약인원</label>
+              <select id="selectTimeC" class="info_select">
+              </select>
+            </div>
+            <div class="info_div">
+              <label for="phone">핸드폰</label>
+              <input class="info_input" type="text" id="phone">
+            </div>
+            <div class="info_div">
+              <label for="email">이메일</label>
+              <input class="info_input" type="email" id="email">
+              @ <input class="info_input_2" type="email" id="myselect">
+
+              <select class="info_select" id="mySelect" onchange="render_mailchk();">
+  						  <option value="">직접입력</option>
+  		       	  <option value="naver.com">naver.com</option>
+                <option value="nate.com">nate.com</option>
+                <option value="daum.net">daum.net</option>
+                <option value="gmail.com">gmail.com</option>
+                <option value="hanmail.net">hanmail.net</option>
+  				  	</select><br>
+            </div>
+
+            <button type="button" class="info_bt" onclick="location.href='reservation_my.html'">예약</button>
+            <!-- 경고창 띄우고 , 예약되면 예약되었습니다 띄우고 reservation_my.html으로 이동 -->
+            <button type="button" class="info_bt">취소</button>
+            <button type="reset" class="info_bt">다시작성하기</button>
+
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

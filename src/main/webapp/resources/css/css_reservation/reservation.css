@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+/* 탭 메뉴 */
+.tab_menu{
+  width:130px;
+  height: 1000px;
+  float: left;
+  padding: 20px 38px 0 0;
+
+  border-right: 2px solid #a70101;
+}
+
+/* 탭했을 경우 나오는 컨텐츠 */
+.tab_content{
+  display: inline-block;
+  padding : 8px 0 8px 10px;
+  margin: 40px 0 0 65px;
+  height: 900px; width:645px;
+  position: relative;
+  top:20px;
+  /* border: 1px solid #969696; */
+}
+
+/* 탭컨텐츠 제목 */
+.tab_content p.first{
+  display: inline-block;
+  font-size: 20px;
+  color: #585858;
+  font-weight: bold;
+  padding: 0 0 7px 0px;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #a70101;
+}
+
+
+/* 탭메뉴 디자인  */
+.tab_menu ul li.res{
+  display: block;height: 40px;margin: 11px 0 21px 0;
+}
+
+.tab_menu ul li.res p{padding-top: 8px;}
+
+.tab_menu ul li.res p a{color : #a1a1a1;font-weight: bold;}
+
+.tab_menu ul li.icon_res{
+  padding-left: 53px;
+  opacity: 0.8;
+  cursor: pointer;
+  background: url(../../image_reservation/reserv.png) no-repeat 0 center;
+}
+.tab_menu ul li.icon_res:hover,
+.tab_menu ul span.active_tab li.icon_res{
+  background: url(../../image_reservation/reserv_on.png) no-repeat 0 center;
+}
+.tab_menu ul li.icon_my{
+  padding-left: 53px;
+  opacity: 0.8;
+  cursor: pointer;
+  background: url(../../image_reservation/my.png) no-repeat 0 center;
+}
+.tab_menu ul li.icon_my:hover,
+.tab_menu ul span.active_tab li.icon_my{
+  background: url(../../image_reservation/my_on.png) no-repeat 0 center;
+}
+
+.tab_menu ul li.icon_res:hover a,
+.tab_menu ul li.icon_my:hover a,
+.tab_menu ul span.active_tab li p a{color: #000000;}
+
+/* 각 select */
+.select{
+  display: inline-block;
+  margin: 0px 00px 20px 10px;
+}
+
+.select label.ml{margin-left: 26px;}
+
+.select label{
+  font-size: 13px;font-weight: bold;
+  color: #575757;
+  margin-right: 10px;
+}
+
+.select .sd{
+  height: 40px; width: 150px;
+  padding-left: 10px;
+  border-radius: 4px;
+}
+
+/* 하위주소 */
+
+.select .addr,.select .res_name{
+  margin-top: 7px;
+  height :30px;width: 205px;
+  border: 1px solid #b9b9b9;
+  border-radius: 4px;
+}
+
+.search_res .sbutton{
+  color: #fff;
+  border-radius: 3px;
+  border-style: none;
+  padding: 6px 13px 8px 13px;
+  margin-left: 9px;
+  background-color: #a70101;
+}
+
+/* 검색 결과 목록 */
+.searchlist{margin-top: 40px;}
+
+.searchlist table{
+  border-collapse: collapse;
+	width: 648px;
+  text-align: center;
+  font-size: 14px;
+}
+.searchlist table th{
+  padding: 10px;
+  font-size: 15px;
+  border-bottom: 1px solid #a70101;
+  height: 40px;
+
+}
+.searchlist table tr,.tab_content table td{
+  height: 40px;
+	padding: 15px 10px 8px 10px;
+
+}
+
+
+.searchlist table th:first-child,.searchlist table td:first-child{
+  text-align: left;
+}
+
+/* 부제목 : 예약가능 맛집 리스트 */
+.searchlist h5{
+  margin-left: 10px;
+  font-size: 15px;
+
+  color: #141414;
+}
+
+/* 가게 사진 */
+.searchlist table tr td img.food_img{
+
+  width: 50px;height: 50px;
+}
+
+/* 가게명 */
+.searchlist table tr td a.food_a{
+  position: relative;
+  bottom: 33px;left: 5px;
+  font-size: 15px;font-weight: bold;
+  color: #1f1f1f;
+}
+
+/* 주소 */
+.searchlist table tr td p.food_p{
+  position: relative;
+  bottom: 26px;right:-62px;
+}
+
+/* 예약 링크 */
+.searchlist table tr td a.food_a_re{color: #939393}
+.searchlist table tr td a.food_a_re:hover{
+  font-weight: bold;
+  color : #000000
+
+}
+
+/* paging */
+
+.pagination {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.pagination li a{
+    color: black;
+    padding: 8px 16px;
+    transition: background-color .3s;
+}
+
+.pagination li.active a{
+    background-color: #a70101;
+    color: white;
+}
+
+.pagination li:hover:not(.active) a{background-color: #ddd;}
+
+footer{
+     border-top: 1px solid #e0e0e0;
+     min-width: 1000px;
+     line-height: 25px;
+     padding: 35px 0;
+     text-align: center;
+     position: relative;
+     bottom: 0;
+     font-size: 12px;
+     color: #808080;
+     margin: 63px auto 0px auto;
+     
+   }

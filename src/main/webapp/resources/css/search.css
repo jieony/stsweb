@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+.all{width: 100%;}
+section{width: 1200px;margin:0 auto;}
+
+div#detail-cont{
+  margin: 50px 0 100px 180px
+}
+
+  /* 음식점 zoom이미지 */
+  .zoom{
+    float: left;
+    margin: 5px;
+  }
+  hr{margin: 0;padding: 0;}
+
+  /* 상세정보 */
+  .detail_btn{
+    background-color: #c2c3c2;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 2px;
+    cursor: pointer;
+    float: right;
+  }
+
+
+/* pagination */
+.pagination {
+  position:relative;
+  right:30px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.pagination a {
+	
+    color: black;
+    padding: 8px 16px;
+    transition: background-color .3s;
+}
+
+.pagination li.active a{
+    background-color: #a70101;
+    color: white;
+}
+
+.pagination li:hover:not(.active) a{background-color: #ddd;}

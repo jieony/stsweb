@@ -1,0 +1,383 @@
+@charset "UTF-8";
+
+/* nav 전체 */
+.container{
+  width: 350px;
+  float: left;
+  position: absolute;
+  margin-top: 60px;
+
+}
+
+.f-nav {z-index:9999;
+  position: fixed;
+  top:60px;}
+
+/* 우측 nav */
+div#detail-cont{
+  margin-left: 400px;
+}
+
+/* 좌측 nav 빨간박스 */
+.red_container{
+    background-color: #a70101;
+    padding: 20px 30px 35px 35px;
+    height: 40px;
+    border-radius: 5px;
+    position: relative;top:5px;
+  }
+  .inner-container{
+    padding-left: 30px;
+  }
+
+  /* 좌측 nav 지역선택 부분 */
+  .location-select{
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid  #a70101;
+  }
+
+  .inner-container,.z{color: white;font-size: 24px;}
+  .z{
+    font-size: 12px;
+    padding-left: 30px;
+    padding-top: 10px;
+  }
+
+  .boxing{
+    border-radius: 10px;
+    padding: 3px;
+    margin-right: 7px;
+    background-color: #ffffff;
+    float: left;
+    color: #a70101;
+  }
+
+  .location-select table{border-spacing: 3px;}
+  #map li{
+  	display: inline-table;
+  }
+
+  /* 음식점 zoom이미지 */
+  .zoom{
+    float: left;
+    margin: 5px;
+  }
+  .zoomimg_list{
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    float: left;
+    display: block;
+    height: 200px;
+  }
+  /* zoomlist 1~2 */
+  .box1{
+    left: 210px;
+  }
+  .box1 li{
+    display: grid;
+  }
+  .box2{
+    margin-left: 10px;
+    position: relative;
+    left: 55px;
+    bottom: 192px;
+    }
+    .box2 li{
+      display: grid;
+    }
+
+    table tr td p{
+      font-size: 14px;
+      margin:15px 0;
+    }
+
+  div.container2 table tr td img.sp{
+  position: relative;
+  top:3px;
+  }
+  hr{margin: 0;padding: 0;}
+
+  table li a.location{
+  }
+  /* 상세정보 */
+  .detail_btn{
+    background-color: #c2c3c2;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    float: right;
+    border-radius: 4px;
+  }
+
+  .picture_btn{
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  /* 좌측 강남/강북 선택부분 */
+  .seoul{
+    width: 350px;
+    height: 312px;
+    background: url("../image_main/seoul.jpg") no-repeat;
+    background-size: 350px 300px;
+    position: relative;
+    bottom: 35px;
+  }
+  .seoul .map_gb{
+    position: absolute;
+     width: 40px;
+    border-style:none;
+    height: 36px;
+    background: url("../image_main/icon/findmap.png") -50px 0px no-repeat;
+    text-indent: -9999px;
+    display: block;
+    left: 172px;
+    top: 98px;
+    cursor: pointer;
+  }
+  .seoul .map_gb:hover{
+    position: absolute;
+    width: 40px;
+    border-style=none;
+    height: 36px;
+    background: url("../image_main/icon/findmap.png") -50px -90px no-repeat;
+    text-indent: -9999px;
+    display: block;
+    left: 172px;
+    top: 98px;
+  }
+  .seoul .map_gb.on{
+    position: absolute;
+    
+    height: 36px;
+    width: 40px;
+    border-style:none;
+    background: url("../image_main/icon/findmap.png") -50px -90px no-repeat;
+    text-indent: -9999px;
+    display: block;
+    left: 172px;
+    top: 98px;
+  }
+
+  .seoul .map_gn{
+    position: absolute;
+    width: 40px;
+    border-style:none;
+    height: 36px;
+    background: url("../image_main/icon/findmap.png") 0 0 no-repeat;
+    text-indent: -9999px;
+    display: block;
+    left:172px;
+    top: 205px;
+    cursor: pointer;
+  }
+  .seoul .map_gn:hover{
+    position: absolute;
+    width: 40px;
+    border-style:none;
+    height: 36px;
+    background: url("../image_main/icon/findmap.png") 0px -90px no-repeat;
+    text-indent: -9999px;
+    display: block;
+    left: 172px;
+    top: 205px;
+  }
+  .seoul .map_gn.on{
+    position: absolute;
+    width: 40px;
+    border-style:none;
+    height: 36px;
+    background: url("../image_main/icon/findmap.png") 0px -90px no-repeat;
+    text-indent: -9999px;
+    display: block;
+    left: 172px;
+    top: 205px;
+  }
+
+  header{
+    border-bottom: 2px solid #a70101;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  /* 공통 */
+  .top{
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    padding-bottom: 15px;
+  }
+  .title{
+    margin : 0 0 15px 100px;
+  }
+  .logo{
+
+    position: relative;
+    left:60px;
+  }
+
+
+  /* 검색창 */
+  .search{
+    display: inline-block;
+    width: 400px;
+
+  }
+
+  /* 검색 입력란 */
+  .searchtext{
+    border: 4px solid #a70101;
+    width: 300px; height: 25px;
+    padding :0 10px;
+   }
+
+   /* 검색버튼 */
+   .search button{
+
+    background-color: #a70101;
+    border: none;
+    color: white;
+    padding: 7px 11px 9px 11px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+   }
+
+  /* 공통 네비 */
+  .nav{
+    width: 920px;
+    display: block;
+    clear: both;
+    padding-top: 30px;
+
+    margin: 0 auto;
+  }
+  .nav ul{
+    /* width:  */
+
+  }
+  .nav li{
+    display: inline-block;
+
+    margin-right: 20px;
+    width:149px;
+    text-align: center;
+  }
+
+  .nav li a{
+    position: relative;
+    display: block;
+    padding: 10px;
+    width:120px;
+    font-size: 17px;
+    color: #4d4d4d;
+    font-weight: bold;
+  }
+  .nav li a.active{
+    background-color: #a70101;
+    color:#fff;
+  }
+  .nav ul li a:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+  }
+
+  .nav ul li a:hover{
+    transition: all 1.5s;
+    color: #fff;
+    z-index: 1;
+  }
+
+  .nav ul li a:hover:after{
+    z-index: -10;
+    animation: fill 1s forwards;
+    -webkit-animation: fill 1s forwards;
+    -moz-animation: fill 1s forwards;
+    opacity: 1;
+  }
+
+  /* Keyframes */
+  @-webkit-keyframes fill {
+    0% {
+      width: 0%;
+      height: 1px;
+    }
+    50% {
+      width: 100%;
+      height: 1px;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+      background: #a70101;
+    }
+  }
+
+  .login{
+    position: relative;
+    left: 27px;
+    padding: 0px 20px 3px 20px;
+    border-style: none;
+    background-color: #fff;
+    color:#bbbbbb;
+
+    border-right: 1px solid #e7e7e7;
+  }
+  .login:hover{
+    color:#a70101;
+  }
+  /* end 공통 */
+  
+
+.pagination {
+  margin-top: 50px;margin-left:200px;
+  text-align: center;
+  postion:relatvie;
+  top:20px;
+}
+
+.pagination li a{
+    color: black;
+    padding: 8px 16px;
+    transition: background-color .3s;
+}
+
+.pagination li.active a{
+    background-color: #a70101;
+    color: white;
+}
+
+.pagination li:hover:not(.active) a{background-color: #ddd;}
+
+/* footer */
+footer{
+     border-top: 1px solid #e0e0e0;
+     min-width: 1000px;
+     line-height: 25px;
+     padding: 35px 0;
+     text-align: center;
+     position: relative;
+     bottom: 0;
+     font-size: 12px;
+     color: #808080;
+     margin: 74px auto 0px auto;
+   }
+
+  

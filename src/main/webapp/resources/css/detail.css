@@ -1,0 +1,415 @@
+
+/*전체 */
+body,.header{width:960px; margin:0 auto; }
+li{list-style-type: none;}
+a{text-decoration: none;}
+*{box-sizing: border-box;}
+
+/* 네비게이션 전체 */
+.Top{
+  position:fixed;top:0px;left:0px; z-index:3;  clear:both;
+  width:100%; height:170px; text-align:left;
+  margin:0 auto;
+  background-color: #ffffff;
+  border-bottom: 4px solid #a70101;
+}
+
+/* 음식점이름 */
+.header>p{
+  font-weight: bold;
+  color:#000000;
+  font-size: 42px;
+  margin: 38px 0 69px 17px;
+}
+
+/* 네비 링크 위치 */
+.header ul{
+  text-align: right;
+  margin:-42px;padding:0;
+}
+
+.header ul li a{
+  float:left;
+  display:block;
+  padding: 14px 50px;
+  color:black;
+  border-radius: 3px;
+}
+.header ul li a:hover, .header ul li a.active{
+  background:#a70101;
+  color:#fff;
+}
+
+.section_basic{
+  /* background-color: #ca83ff; */
+  height: 750px;
+  margin-top: 30px;
+}
+
+/*슬라이드 style*/
+.mySlides{display:none;}
+.mySlides:first-child{display:block;}
+.cursor{cursor:pointer;}
+.prev{left:0%;}
+.prev,.next{cursor: pointer; position: absolute; top:50%; width: auto; padding: 16px; margin-top:-50px; color:white; font-weight:bold; font-size:50px;
+          border-radius: 0 3px 3px 0; user-select: none; -webkit-user-select: none;
+          }
+.next{right:0; border-radius: 3px 0 0 3px;}
+.prev:hover, .next:hover{background-color: rgba(0,0,0,0.8);}
+.numbertext{color:#000000; font-size:12px; padding: 12px 12px; position: absolute; top:0;background-color: #fff; opacity: 0.5;}
+.container{margin-left: 40px;position:relative; top:200px; left:0;color:white;float:left;width:410px;background-color: #222;}
+/* .row:after {content: "";display: table;clear: both;} */
+.column {float: left; width: 16.66%;}
+.demo {opacity: 0.6;}
+.active,.demo:hover {opacity: 1;}
+
+
+/* 레스토랑 정보시작 */
+.info{
+  position:relative;top:190px;
+  display: inline-block;
+  width: 440px;
+  margin-left: 70px;
+  font-size: 13px;
+}
+.Rmap .Des img{
+  width: 300px; height:100px;
+}
+.info li{
+  position: relative;
+  left:0px;
+}
+
+.info ul,li{
+  display: inline-block;
+  position:relative;
+  right:20px;
+}
+.info .Rcul{
+  padding-bottom: 4px;
+  border-bottom: 1px solid #a70101;
+  float:left;
+  color:#000000;
+  font-size: 14px;
+  display: inline-block;
+  width: 65px;
+}
+.info .Des{width:300px;margin-left:25px;}
+
+/* 평점 글씨 올리기 */
+.info #Rcul{margin-top: 15px;}
+
+/* 평점 글씨이어붙이기 */
+.info .score{width:400px;}
+.info .point{
+  width:300px;
+  float:left;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.info .Rmap{margin-bottom:20px;}
+
+/*레스토랑 평가하기버튼 */
+.info .point button{
+  background-color:#e88989;
+  border-radius: 15px;
+  border:2px solid #e88989;
+  width:100px;
+  color:#ffffff;
+  font-size: 13px;
+  padding:3px;
+}
+.info .point button span{
+cursor: pointer;
+display:inline-block;
+position: relative;
+transition: 0.5s;
+}
+.info .point button span:after{
+content: '\00bb';
+position: absolute;
+opacity:0;
+top:0;
+right:-20px;
+transition:0.5s;
+}
+.info .point button:hover span{
+padding-right:25px;
+}
+.info .point button:hover span:after{
+opacity: 1;
+right:0;
+}
+
+/*좋아요 버튼 위에 선 */
+.info .Rlike{
+
+display:block;
+height: 30px;
+padding-top: 10px;
+border-top: 1px solid#9c9c9c;
+text-align: right;
+}
+/*상세정보시작  */
+.detail h2{padding-bottom: 15px;border-bottom: 2px solid#696666;}
+.detail p{text-align: right;font-size: 13px;margin-top: -43px;margin-bottom: 80px;}
+
+/*상세정보 테이블 */
+.detail table th{width: 10%;height: 60px;background-color:#f9f9f9;}
+.detail table td{width: 40%;text-align: left;padding-left: 10px;}
+.detail table{text-align: center; border-collapse: collapse;width:960px; font-size: 14px;}
+
+.detail table th,.detail table td {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+  }
+
+/* 메뉴판시작 */
+.menupang{
+  margin-top: 80px;
+  display: block;
+}
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: ;
+    width: 30%;
+    height: 300px;
+}
+
+/* 메뉴판 왼쪽 메뉴*/
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/*메뉴판 왼쪽 메뉴 hover*/
+.tab button:hover {
+    color: #a70101;
+}
+
+/* 메뉴판 왼쪽메뉴 눌렸을시 */
+.tab button.active {
+    color: #a70101;
+}
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+    font-size: 14px;
+    overflow:scroll;
+}
+
+.menupang{
+  height: 381px;
+  overflow: hidden;
+}
+
+/*메뉴판 안 */
+.menupang h5{
+  height:30px;font-size: 15px;margin-top: 16px;border-bottom:1px solid #eeeeee; padding: 0px 5px;text-align: center;
+}
+.menupang h2{padding-bottom: 7px;border-bottom: 2px solid#696666;}
+
+.menu table{
+  width:100%;
+
+}
+/*메뉴 th 와 td */
+.menu th{text-align: center;height:45px; border-bottom: 1px solid#eeeeee;}
+.menu td{border-bottom:1px solid #eeeeee;}
+.menu .count_num{width:20%;text-align: center; }
+/* 알림시간 설정 */
+.menu .Rclock{color: #e47676;height:30px; text-align: left;}
+input[type=number] {width: 30%; border: 3px solid #fff;}
+.menu .mainmenu{height: 40px;}
+.menu .mainmenu p{
+   font-size: 11px;width: 300px;
+    /* text-align: center; */
+     color:#868686;
+   }
+/*메뉴 카메라버튼 활성화아직안시킴  */
+#menucamera{
+  /* margin-top: 5px; */
+  width:30px;
+  height:30px;}
+.mainmenu{width: 300px;}
+
+/*메뉴판 가격 가운데정렬  */
+.menu .Rprice{text-align: center;}
+.menu .ic_notice{
+  text-align: right;
+  font-size: 12px;
+  color:#a4a8aa;
+}
+
+
+
+/* 리뷰 & 평가 */
+.Review{margin-top: 80px;}
+.Review h2{padding-bottom: 7px;border-bottom: 2px solid#696666;}
+
+
+/*평가하기 버튼*/
+.Review button {
+  float:right;
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #e88989;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px;
+  width: 120px;
+  margin-right: 8px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin:-56px;
+  margin-right: 8px;
+}
+
+.Review button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Review button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.Review button:hover span {
+  padding-right: 25px;
+}
+.Review button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*평가하기 버튼 끝  */
+
+.Review p:nth-of-type(1){
+  width: 20px;
+  position: relative;bottom:21px;left:93px;
+  text-align: center;
+  display: inline-block;
+}
+
+.Review li{
+  width: 100%;
+  font-size: 13px;
+  border: 1px solid #eeeeee;
+  padding-left: 30px;
+}
+
+.W_ul dt span.nick {
+  float: left;
+  width: 80px;
+  margin-left: 15px;
+  position: relative;
+  top:8px;
+}
+
+.W_ul dd.re_date{
+  position: relative;
+  top:8px;
+}
+
+
+.Review img{
+  position: relative;bottom:21px; right: 4px;
+}
+
+/* 프로필 사진 */
+.Review img.img_profile{
+  width:30px; height: 30px;
+  display: block;
+  float: left;
+  position: relative;
+  top: 1px;
+}
+
+.W_ul ul li p.reply{
+  float: left;
+  position: relative;left: 42px;bottom: 4px;
+  text-align: left;
+  display: inline-block;
+  width: 750px;
+}
+
+/*페이징 */
+.pagination {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: block;
+  text-align:center;
+}
+.pagination a {
+    color: black;
+    /* float: left; */
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.pagination li a.active {  
+    color:#dedede;  
+    border:1px solid #a70101;  
+    background-color:#a70101;  
+}  
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+#menu_show{width: 100px;height: 100px;display: block;transition: 1.5s; }
+#goTop{
+  position:fixed;
+  right:20px;bottom: 20px;
+  width: 40px; height: 30px;
+  border: 0; background: rgba(0,0,0,0.6);
+  color: #fff;
+  z-index: 1000;
+  transition: All 1s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#goTop.on{
+  visibility: visible;
+  opacity: 1;
+}
+/* footer */
+footer {
+    clear:both;
+    width:100%;
+    line-height: 25px;
+    padding: 35px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    top:0px;
+    margin: 0 auto;
+    overflow: hidden;
+    left:0px;
+    font-size: 12px;
+    color: #808080;
+
+    }
+	
+	

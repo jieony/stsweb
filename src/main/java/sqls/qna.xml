@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="qna">
+
+	
+	
+	<select id="selectqnaListlev0" resultType="com.hk.th.vo.qnaVo">
+		select * from question where q_lev=0 and q_num>0
+	</select>
+	
+	<select id="selectqnaListlev1" resultType="com.hk.th.vo.qnaVo">
+		select * from question where q_lev=1
+	</select>
+	
+	<select id="selectqnaList" resultType="com.hk.th.vo.qnaVo" parameterType="hashmap">
+		select * from question where q_num>0 order by q_num desc LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<select id="relistbyQnum" resultType="com.hk.th.vo.qnaVo" parameterType="String">
+		select * from question where q_lev=1 and q_ref=#{n}
+	</select>
+	
+	
+	<insert id="insertqna" parameterType="com.hk.th.vo.qnaVo">
+		insert into question(q_num,q_id,q_title,q_contents,q_hits,q_date,q_ref,q_seq,q_lev,q_parent)	
+		values((select ifnull(max(a.q_num)+1,1) as q_num from question a),
+		#{q_id},#{q_title},#{q_contents},0,now(),(select ifnull(max(a.q_ref)+1,1) as q_ref from question a),0,0,
+		0)
+	</insert>
+
+	<select id="detailqna" resultType="com.hk.th.vo.qnaVo">
+		select * from question where q_num=#{q_num}
+	</select>
+	
+	<select id="deleteqna" parameterType="String">
+		delete from question where q_num=#{q_num}
+	</select>
+	
+	<select id="updateqna" parameterType="com.hk.th.vo.qnaVo">
+		update question set q_title=#{q_title},q_id=#{q_id},q_contents=#{q_contents},q_date=now()
+		where q_num=#{q_num}
+	</select>
+	
+	<select id="selectqnaBynum" resultType="com.hk.th.vo.qnaVo" >
+		select q_num,q_title,q_id,q_contents,q_hits,q_date from question where q_num=#{q_num}
+	</select>
+	
+	<select id="updatehitscount" parameterType="hashmap">
+		update question set q_hits=q_hits+1 where q_num=#{num}
+	</select>
+	
+	<select id="searchId" resultType="com.hk.th.vo.qnaVo" parameterType="hashmap">		
+      <if test="searchtype != null">	
+		<if test="searchtype=='q_id'.toString()">
+			select q_num,q_title,q_id,q_date,q_hits,q_ref,q_lev from question where q_id like concat('%',#{keyword},'%') and q_num>0
+		</if>
+		<if test="searchtype=='q_title'.toString()">
+			select q_num,q_title,q_id,q_date,q_hits,q_ref,q_lev from question where q_title like concat('%',#{keyword},'%') and q_num>0
+		</if>
+	   </if>		
+	</select>
+	
+	<insert id="insertRe" parameterType="com.hk.th.vo.qnaVo">
+		insert into question(q_num,q_id,q_title,q_contents,q_hits,q_date,q_ref,q_lev,q_parent,q_seq)
+		values((select ifnull(max(a.q_num)+1,1) as q_num from question a),
+		#{q_id},#{q_title},#{q_contents},0,now(),#{q_ref},1,#{q_parent},(select ifnull(max(a.q_seq)+1,1) as q_num from question a))
+	</insert>
+	
+	<select id="pageCount" resultType="Integer" parameterType="Integer">
+		select count(*) as cnt from question where q_num>0
+	</select>
+	
+	<select id="selectpageList" resultType="com.hk.th.vo.qnaVo" parameterType="hashmap">
+		select * from question where q_num>0 LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<select id="noticeList" resultType="com.hk.th.vo.qnaVo">
+		select * from question where q_num=0
+	</select> 
+	
+	
+</mapper>

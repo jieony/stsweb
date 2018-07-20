@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="book">
+	
+	<select id="selectresList" resultType="com.hk.th.vo.resVo">
+		select * from res where permission='승인' and information_bo='가능'
+	</select>
+	
+	<select id="selectsearchresList" resultType="com.hk.th.vo.resVo" parameterType="map">
+		select distinct res_code,res_name,line,res_tel,res_addr,theme,holiday,seats,contents,information_bo,lng,lat,permission,r.map_num,res_uid,res_hourS,res_hourE 
+		from res as r,region as g 
+		where g.map_num like concat('%',#{map_num},'%') and
+		r.line like concat('%',#{line},'%') and
+		r.theme like concat('%',#{theme},'%') and
+		r.res_name like concat('%',#{res_name},'%') and
+		r.res_addr like concat ('%',#{res_addr},'%') and permission='승인' and information_bo='가능'
+	</select>
+	<!-- pagingCount -->
+	<select id="searchpageingCount" resultType="Integer" parameterType="hashmap">
+		select count(distinct res_code,res_name,line,res_tel,res_addr,theme,holiday,seats,contents,information_bo,lng,lat,permission,r.map_num,res_uid,res_hourS,res_hourE) as cnt 
+		from res as r,region as g 
+		where g.map_num like concat('%',#{map_num},'%') and
+		r.line like concat('%',#{line},'%') and
+		r.theme like concat('%',#{theme},'%') and
+		r.res_name like concat('%',#{res_name},'%') and
+		r.res_addr like concat ('%',#{res_addr},'%') and permission='승인' and information_bo='가능'
+	</select>
+	<!-- paging -->
+	<select id="searchpageinglist" resultType="com.hk.th.vo.resVo" parameterType="hashmap">
+		select distinct res_code,res_name,line,res_tel,res_addr,theme,holiday,seats,contents,information_bo,lng,lat,permission,r.map_num,res_uid,res_hourS,res_hourE,pics
+		from res as r,region as g 
+		where g.map_num like concat('%',#{map_num},'%') and
+		r.line like concat('%',#{line},'%') and
+		r.theme like concat('%',#{theme},'%') and
+		r.res_name like concat('%',#{res_name},'%') and
+		r.res_addr like concat ('%',#{res_addr},'%') and permission='승인' and information_bo='가능' LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<select id="selectresinfo" resultType="com.hk.th.vo.resVo" parameterType="String">
+		select * from res where res_code = #{res_code}
+	</select>
+	
+	<select id="selectbooklistByid" resultType="com.hk.th.vo.bookVo" parameterType="String">
+		select * from book where bo_uid = #{userid} order by bo_date desc
+	</select>
+	
+	<select id="selectbookdetail" resultType="com.hk.th.vo.bookVo" parameterType="String">
+		select * from book where bo_code = #{bo_code}
+	</select>
+	
+	<update id="updatebooking" parameterType="com.hk.th.vo.bookVo">
+		update book set
+		bo_name=#{bo_name}, bo_tel=#{bo_tel}, bo_email=#{bo_email} 
+		where bo_uid=#{bo_uid};
+	</update>
+	
+	<delete id="deletebook" parameterType="String">
+		delete from book where bo_code=#{bo_code};
+	</delete>
+	
+	<insert id="insertbook" parameterType="com.hk.th.vo.bookVo">
+		insert into 
+		book(bo_code,bo_name,bo_tel,bo_email,bo_member,bo_date,bo_time,bo_conf,res_code,bo_uid)
+		values ((select ifnull(max(bo_code)+1,1) as bo_code from book bk),#{bo_name},#{bo_tel},#{bo_email},#{bo_member},#{bo_date},#{bo_time},'진행',#{res_code},#{bo_uid});
+	</insert>
+	
+	<select id="pageGetCount" resultType="Integer" parameterType="Integer">
+		select count(*) as cnt from res where permission='승인' and information_bo='가능'
+	</select>
+	
+	<select id="pageList" resultType="com.hk.th.vo.resVo" parameterType="hashmap">
+		select * from res where permission='승인' and information_bo='가능' LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<select id="mybookpageGetCount" resultType="Integer" parameterType="String">
+		select count(*) as cnt from book where bo_uid=#{userid}
+	</select>
+	
+	<select id="mybookpageList" resultType="com.hk.th.vo.bookVo" parameterType="hashmap">
+		select * from book where bo_uid=#{userid} LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<select id="selectReview" resultType="com.hk.th.vo.reviewVo">
+		select * from review
+	</select>
+	
+	<!-- 사용 x -->
+	<select id="selectpiclist" resultType="com.hk.th.vo.resVo">
+		select * from res where permission='승인' and information_bo='가능'
+	</select>
+	
+
+</mapper>
+

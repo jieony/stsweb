@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+.loginf_content{
+  display: inline-block;
+    padding: 8px 0 8px 10px;
+    margin: 40px 0 0 65px;
+    height: 500px;
+    width: 645px;
+    position: relative;
+    top: 20px;
+}
+.loginf_content p.first{
+  display: block;
+  font-size: 20px;
+  color: #585858;
+  font-weight: bold;
+  padding: 0 0 7px 0px;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #a70101;
+  /* background-color: #34c473; */
+
+}
+
+.loginf_content .loginf{
+  display: inline-block;
+  margin: 15px 0 50px 50px;
+  font-size: 14px;
+  color: #828282;
+  font-weight: bold;
+}
+
+.loginf_div{
+  display: block;
+  margin-bottom: 30px;
+}
+
+.loginf_content .loginf{
+  margin: 40px 0 50px 50px;
+}
+
+.logindivbtn{
+  margin-left: 100px;
+}
+
+
+
+.loginf_input{
+  /* background-color: #fcfcfc; */
+  margin-left: 40px;
+  height: 30px; width: 130px;
+  border-radius: 4px;
+  border: 1px solid #d2d2d2;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 300px;
+  height: 40px;
+
+}
+
+.login_bt{
+  margin-top: 25px;
+  margin-right: 10px;
+  border-style: none;
+  border-radius: 4px;
+  background-color: #910404;
+  padding:6px 13px 8px 13px;
+  font-size: 15px;
+  color: #fff;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="detail">
+	<select id="getCateCount" resultType="Integer" parameterType="Integer">
+		select count(distinct menu_cate) from menu where res_code = #{code }
+	</select>
+	
+	<select id="getCate" resultType="String" parameterType="Integer">
+		select menu_cate from menu where res_code = #{code } 
+		group by menu_cate order by menu_code asc
+	</select>
+	
+	<select id="getMenuByCate" resultType="com.hk.th.vo.menuVo" parameterType="com.hk.th.vo.menuVo">
+		select * from menu where res_code=#{res_code} and menu_cate=#{menu_cate}
+	</select>
+	
+	<select id="getReview" resultType="com.hk.th.vo.reviewVo" parameterType="Integer">
+		select * from review where res_code=#{code}
+	</select>
+	
+	<insert id="insertReview" parameterType="com.hk.th.vo.reviewVo">
+		insert into review (review_num,uid,contents,reg_date,score,res_code)
+		values((SELECT IFNULL(MAX(A.review_num)+1,1) FROM review A),#{uid},#{contents},now(),#{score},#{res_code})
+	</insert>
+	
+	<select id ="getReviewCount" resultType="Integer" parameterType="Integer">
+		select count(*) from review where res_code=#{code}
+	</select>
+	
+	<update id="updateScore" parameterType="com.hk.th.vo.resVo">
+		update res set score=#{score} where res_code = #{res_code}
+	</update>
+	
+	<select id="detailcount" resultType="Integer">
+		select count(*) as cnt from review
+	</select>
+	
+	<select id="detailpagelist" resultType="com.hk.th.vo.reviewVo" parameterType="hashmap">
+		select * from review where res_code=#{res_code} order by review_num desc LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<delete id="deleteReview" parameterType="Integer" >
+		delete from review where review_num=#{num}
+	</delete>
+	
+	<select id="getScores" parameterType="Integer" resultType="Float">
+		select score from review where res_code=#{code};
+	</select>
+</mapper>

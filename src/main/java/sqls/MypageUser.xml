@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MypageUser">
+	<select id="selectmembers" resultType="com.hk.th.vo.MembersVo">
+		select * from members
+	</select>
+	<update id="updatemembers" parameterType="com.hk.th.vo.MembersVo">
+		update members set name=#{name},pw=#{pw},tel=#{tel},address=#{address},email=#{email},penalty=#{penalty},enroll=#{enroll} where uid=#{uid}
+	</update>
+	<select id="detailmembers" resultType="com.hk.th.vo.MembersVo" parameterType="String">
+		select uid,name,pw,penalty,address,email,tel,enroll from members where uid=#{uid}
+	</select>
+
+	<select id="detailbook" resultType="com.hk.th.vo.bookVo" parameterType="Integer">
+			select * from book where bo_code=#{bo_code} 
+	</select>
+	
+	
+	
+	
+	<select id="checkmembers" resultType="String" parameterType="String">
+		select enroll from members where uid=#{uid}
+	</select>
+
+	
+	<insert id="insertres" parameterType="com.hk.th.vo.resVo">
+		insert into res(res_code,res_name,line,res_addr,res_tel,res_hourS,res_hourE,holiday,seats,contents,information_bo,theme,permission,res_uid)
+		 values((select  ifnull(max(a.res_code)+1,1) as res_code from res a),#{res_name},#{line},#{res_addr},#{res_tel},#{res_hourS},#{res_hourE},#{holiday},#{seats},#{contents},#{information_bo},#{theme},'미승인',#{res_uid})
+	</insert>
+	<update id="updateEnroll" parameterType="String">
+		update members set enroll='1' where uid=#{uid}
+	</update>
+	<update id="updateEnrollZero" parameterType="String">
+		update members set enroll='0' where uid=#{uid}
+	</update>
+	
+	<select id="selectRes" resultType="com.hk.th.vo.resVo" parameterType="String">
+		select * from res where res_uid=#{res_uid}
+	</select>
+	<select id="selectRescode" resultType="com.hk.th.vo.resVo" parameterType="Integer">
+		select * from res where res_code=#{res_code}
+	</select>
+	
+		<update id="updateMyRes" parameterType="com.hk.th.vo.resVo">
+		update res 
+		set res_name=#{res_name},line=#{line},res_tel=#{res_tel},res_addr=#{res_addr},
+		theme=#{theme},res_hourS=#{res_hourS},res_hourE=#{res_hourE},holiday=#{holiday},
+		seats=#{seats},contents=#{contents},information_bo=#{information_bo},
+		res_uid=#{res_uid}
+		where res_code=#{res_code}
+	</update>
+	
+	<update id="updateConf"  parameterType="com.hk.th.vo.bookVo">		
+		update book set bo_conf=#{bo_conf} where bo_code=#{bo_code}		
+	</update>
+
+	<delete id="deleteRes" parameterType="String">
+		delete from res where res_uid=#{res_uid}
+	</delete>
+	
+	<select id="selectmenu" resultType="com.hk.th.vo.menuVo" parameterType="Integer">
+		select * from menu where res_code=#{res_code}
+	</select>
+	
+	<update id="updatemenu" parameterType="com.hk.th.vo.menuVo">
+		update menu set menu_cate=#{menu_cate},menu_fname=#{menu_fname},price=#{price} where menu_code=#{menu_code}
+	</update>
+	
+	<select id="pageGetCount" resultType="Integer" parameterType="Integer">
+		select count(*) as cnt from book where res_code=#{res_code}
+	</select>
+	
+	<select id="pageList" resultType="com.hk.th.vo.bookVo" parameterType="hashmap">
+		select * from book where res_code=#{res_code} order by bo_conf asc LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<delete id="deleteUser" parameterType="String">
+		delete from members where uid=#{uid}
+	</delete>
+</mapper>
+

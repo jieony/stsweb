@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+  /* 전체 넓이 */
+  section{width: 1800px;text-align: center;}
+
+  /* 회원가입폼영역 */
+  div.join_form{
+    margin-top: 50px;
+    border:0.5px solid #dddddd;background: #fff;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  /* 회원가입 폼영역 */
+  .join_content{width: 450px;margin: 50px auto;
+
+  }
+
+
+  /* "회원가입 작성" */
+  .join_content h2{
+    position: relative; right: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    border-bottom: 3px solid #a70101;
+    color: #494949;
+    /* margin-bottom: 40px; */
+  }
+
+  .join_row{
+    height:80px;
+
+  }
+
+  /* 모든 input */
+  .allinput{
+    width:400px;
+    height: 60px;margin-top: 10px;border: 1px solid #fff;border-bottom: 1px solid #e8e8e8;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /*성별*/
+  .gender{width: 300px;}
+  #womanlb{width: 200px;left: 200px;border: 1px solid #e8e8e8;}
+  #manlb{width: 200px;border: 1px solid #e8e8e8;}
+  .jender{
+    display: block;
+    width: 100px;
+    position: relative;
+    margin: 5px 0px;
+    left: 22px;
+  }
+
+  .jender label{
+    line-height: 45px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    cursor: pointer;
+    color: #8e8e8e;
+    background: #ffffff;
+    text-align: center;
+    height: 50px;
+  }
+
+  .jender input[type='radio']{display: none;}
+  .jender label.on{
+      color: #a70101;
+      border: 1.5px solid #a70101;
+      background: #ffdccf;
+      font-weight: bold;
+    }
+
+
+  /*생년월일*/
+  .birdiv{
+    height: 80px;margin-top: 60px;
+    /* border-bottom: 1px solid #e8e8e8; */
+  }
+
+  /*회원가입버튼*/
+  .joinbtn{
+    transition-duration: 0.4s;
+    width: 450px;
+    height: 50px;
+    margin-top:30px;
+    margin-bottom: 100px;
+    background-color: #fff;
+    color: #a70101;
+    border: 2px solid #a70101;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+  .joinbtn:hover {
+  background-color: #a70101;
+  color: white;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+
+  /* id중복확인 */
+  .idcka{position: relative;}
+  a.idcka{
+    display: inline-block;
+    /* float: right; */
+    position: relative;
+    bottom: 46px;
+    left: 150px;
+    color: #a70101;
+  }
+  /*
+  .idck{<img class="idck" src="image_main/icon/check.png" alt="중복체크">
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    bottom: 0px;
+    left: -40px;
+    }
+   */

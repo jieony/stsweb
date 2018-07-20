@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Mainres">
+
+	<select id ="selectResByMap" resultType="com.hk.th.vo.resVo" parameterType="Integer">
+		select * from res where map_num=#{num};
+	</select>
+	
+	<select id ="searchRes" resultType="com.hk.th.vo.resVo" parameterType="map">
+		select * from res where res_name like concat ('%',#{res_name},'%');
+	</select>
+	
+	<select id="resCount" resultType="Integer" parameterType="Integer">
+		select count(*) as cnt from res where map_num=#{map_num}
+	</select>
+	<select id="pageresList" resultType="com.hk.th.vo.resVo" parameterType="hashmap">
+		select * from res where map_num=#{map_num} order by res_name asc LIMIT #{offset}, #{noOfRecords}
+	</select>
+	
+	<select id ="searchResName" resultType="Integer" parameterType="String">
+		select count(*) as cnt from res where res_name like concat ('%',#{res_name},'%');
+	</select>
+	<select id ="pageResName" resultType="com.hk.th.vo.resVo" parameterType="String">
+		select * from res where res_name like concat ('%',#{res_name},'%') and permission='승인' order by res_name asc LIMIT #{offset}, #{noOfRecords}
+	
+	</select>
+</mapper>
